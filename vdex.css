@@ -3,5 +3,7 @@ background-color: #3b3c3b
 }
 div {
   margin: 70px;
-  border: 1px solid #4CAF50;
+}
+.button {
+  color: #3b3b3b
 }
