@@ -1,1 +1,1 @@
-$('#playBtn').click(() => $('#myAudio')[0].play());
+('#playBtn').click(() => $('#myAudio')[0].play());
