@@ -3,7 +3,11 @@
 <head>
 
 <link rel="stylesheet" type="text/css" href="vdex.css">
-<script src="audio.js"></script>
+<script>
+	$('#playBtn').click(function() {
+  $('#myAudio')[0].play();
+});
+</script>
 <audio id="myAudio">
   <source src="Wclick.mp3" type="audio/mp3">
 </audio>
@@ -18,7 +22,7 @@
   </div>
 </div>
 		<center> 
-				<button class="button"><a href="Multi-media.html"><img src="Untitled.jpg" ; width="150" height="160"</button>
+				<button class="button" onclick="myFunction()"><a href="Multi-media.html"><img src="Untitled.jpg" ; width="150" height="160"</button>
 					</h1>
 					</style>
 
