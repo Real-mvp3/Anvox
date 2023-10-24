@@ -17,7 +17,156 @@
 		</h4>
 	</center>
 	<hs>
-		<style>
+		<center>
+  <style>
+   #searchbar {
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  color: #222;
+  font-size: 16px;
+  height: 36px;
+  padding: 8px 12px;
+  width: 350px;
+}
+
+#searchbar:focus {
+  border-color: #66afe9;
+  outline: 0;
+}
+
+button[type="button"] {
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  color: #222;
+  cursor: pointer;
+  font-size: 16px;
+  height: 52px;
+  padding: 8px 8px;
+  width: 90px;
+}
+    
+button[type="button"]:hover {
+  background-color: #e6e6e6;
+}
+  </style>
+<body>
+  <input type="text" id="searchbar" placeholder="Search...">
+  <button type="button" onclick="setSbar()">Search</button>
+  <script>
+    function setSbar() {
+      // Get the value of the search bar.
+      const searchTerm = document.querySelector('#searchbar').value;
+
+      // Set the Sbar variable to the search term.
+      window.Sbar = searchTerm;
+
+      // Do something with the search term, such as sending it to a search engine or displaying it on the page.
+    }
+</script>
+<p id="search-term"></p>
+<style>
+.btn-group {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-group button {
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-group button:checked {
+  background-color: blue;
+}
+</style>
+   <body>
+<button type="button" id="moviesButton" onclick="changeSbt('Movies')">Movies</button>
+<button type="button" id="tvSeriesButton" onclick="changeSbt('TV/Series')">TV/Series</button>
+<button type="button" id="nulButton" onclick="changeSbt('Nul')">Nul</button>
+<button type="button" id="youtubeButton" onclick="changeSbt('Youtube')">Youtube</button>
+<button type="button" id="googleButton" onclick="changeSbt('Google')">Google</button>
+<script>
+   let sbt = '';
+
+function changeSbt(value) {
+  sbt = value;
+  console.log(`The current value off sbt is ${sbt}`);
+   window.localStorage.setItem('sbt', sbt);
+}
+</script>
+</body>
+</div>
+<script>   
+function setSbar() {
+  // Get the value of the search bar.
+  const searchTerm = document.querySelector('#searchbar').value;
+const owp = searchTerm.replaceAll(' ', '+');
+  const url = "https://www.omdbapi.com/?t=";
+const variable = "&apikey=19a4f0fe";
+  const murl = "https://vidsrc.me/embed/movie?imdb=";
+  const tvurl = "https://vidsrc.me/embed/tv?imdb=";
+  const anurl = "https://vidsrc.me/embed/movie?imdb=";
+  const yturl = "https://www.youtube.com/results?search_query=";
+  const gurl = "https://vidsrc.me/embed/movie?imdb=";
+const newurl = (url + owp + variable);
+ fetch(newurl)
+  .then(function (response) {
+    return response.json();
+  })
+  .then(function (data) {
+    console.log(data.imdbID);
+    var movid = (data.imdbID);
+    var movidurl = (murl + movid);
+    var movidurl = (murl + movid);
+if (sbt === 'Movies' ) {
+  mopo = 11;
+} else if (sbt === 'TV/Series' ) {
+  mopo = 12;
+  } else if (sbt === 'Nul' ) {
+  mopo = 13;
+    } else if (sbt === 'Youtube' ) {
+  mopo = 14;
+      } else if (sbt === 'Google' ) {
+  mopo = 15;
+} else {
+  mopo = 10;
+}
+   if (mopo === 11){
+     var linktype = "https://vidsrc.me/embed/movie?imdb="
+     var cusvar = movid
+   }
+   if (mopo === 12){
+     var linktype = "https://vidsrc.me/embed/tv?imdb="
+     var cusvar = movid
+   }
+   if (mopo === 13){
+     var linktype = "https://vidsrc.me/embed/movie?imdb="
+     var cusvar = owp
+   }
+   if (mopo === 14){
+     var linktype = "https://www.youtube.com/results?search_query="
+     var cusvar = owp
+   }
+   if (mopo === 15){
+     var linktype = "https://www.google.com/search?q="
+     var cusvar = owp
+   }
+   var sbul = linktype + cusvar
+    console.log(`The current value off sbt is ${sbt}`);
+    console.log(mopo);
+   console.log(sbul)
+    window.open(`${sbul}`, '_blank');
+  })
+}
+</script>
+</body>
+		
 <style>
 body {
   font-family: 'Lato', sans-serif;
