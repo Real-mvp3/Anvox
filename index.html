@@ -34,7 +34,7 @@
   font-size: 14px;
   height: 30px;
   padding: 8px 12px;
-  width: 225px;
+  width: 210px;
 }
 
 #searchbar:focus {
@@ -52,7 +52,7 @@ button[type="button"] {
   font-size: 16px;
   height: 50px;
   padding: 8px 8px;
-  width: 75px;
+  width: 70px;
 }
     
 button[type="button"]:hover {
@@ -66,7 +66,7 @@ button[type="button"]:hover {
 <button type="button" id="nulButton" onclick="changeSbt('Nul')">Nul</button>
 <button type="button" id="youtubeButton" onclick="changeSbt('Youtube')">Youtube</button>
 <button type="button" id="googleButton" onclick="changeSbt('Google')">Google</button>
-  <button type="button" id="searchButton" onclick=setSbar() hidden>Search</button>
+  <button type="button" id="searchButton" onclick=setSbar() >Search</button>
   <script>
     function setSbar() {
       // Get the value of the search bar.
@@ -165,18 +165,10 @@ const newurl = (url + owp + variable);
      var cusvar = owp
    }
    var sbul = linktype + cusvar
-    console.log(`The current value of sbt is ${sbt} also ${mopo} also ${sbul} also ${newurl}`);
-   if (mopo === 10){
-   console.log("hello");
-     alert("Please select a search type");
-   } else window.open(`{subl}`)
+    console.log(`The current value of sbt is ${sbt} also ${mopo} also ${sbul} also ${newurl}`); window.open(`${sbul}`, "_blank")
   })
 }
 </script>
-</body>
-  <script>
-    //YOOOO FYI Everything above thi is for the SearchBar and selector panel and it all works proproperly 
-  </script>
 </center>
 <script>
 function openNav() {
