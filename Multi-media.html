@@ -33,32 +33,21 @@
  				<button class="button"><a href="https://www1.rainierland.to/" onmousedown="bleep.play()"><img src="movei.png" ; width="150" height="160"</button>
 					<div>
 						<div>
- 				<button class="button"; launchApp(com.snapchat.android)><a href="https://music.youtube.com/" onmousedown="bleep.play()"><img src="mus.jfif" ; width="150" height="160"</button>
+ 				<button class="button"; onclick="launchApp()"com.snapchat.android; onmousedown="bleep.play()"><img src="mus.jfif" ; width="150" height="160"</button>
 					<div>
+
 <script>
-	function launchApp(packageName) {
-  // Check if the app is installed.
-  if (!isAppInstalled(packageName)) {
-    // Redirect the user to the app's Play Store page.
-    window.location = `https://play.google.com/store/apps/details?id=${packageName}`;
-    return;
-  }
+function launchApp() {
+  // Get the package name of the app you want to launch.
+  var packageName = "com.example.myapp";
 
-  // Create a new intent to launch the app.
-  const intent = new Intent();
-  intent.setAction(Intent.ACTION_VIEW);
-  intent.setData(new Uri.Builder()
-    .scheme("package")
-    .path(packageName)
-    .build());
+  // Create an Intent object to launch the app.
+  var intent = new Intent();
+  intent.setAction(Intent.ACTION_MAIN);
+  intent.addCategory(Intent.CATEGORY_LAUNCHER);
+  intent.setPackage(packageName);
 
-  // Start the activity.
+  // Start the app.
   startActivity(intent);
-}
-
-function isAppInstalled(packageName) {
-  const packageManager = context.getPackageManager();
-  const appInfo = packageManager.getApplicationInfo(packageName, 0);
-  return appInfo !== null;
 }
 </script>
