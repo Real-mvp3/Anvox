@@ -19,22 +19,71 @@
 	</center>
     <hs>
   <center>
-<span style="font-size:30px;cursor:pointer" onclick="openNav()"; onclick="bleep.play()" ;> <img src="darkmode.png"> </a> </span>
+<span style="font-size:30px;cursor:pointer;padding: 64px 64px;" onclick="openNav()"; onclick="bleep.play()" ;> <img src="darkmode.png"> </a> </span>
   <head>
   <title>Search Bar</title>
 </head>
   <center>
+
+<div id="MyClockDisplay" class="clock" onload="showTime()"></div>
+<script>
+    function showTime(){
+    var date = new Date();
+    var h = date.getHours(); // 0 - 23
+    var m = date.getMinutes(); // 0 - 59
+    var s = date.getSeconds(); // 0 - 59
+    var session = "AM";
+    
+    if(h == 0){
+        h = 12;
+    }
+    
+    if(h > 12){
+        h = h - 12;
+        session = "PM";
+    }
+    
+    h = (h < 10) ? "0" + h : h;
+    m = (m < 10) ? "0" + m : m;
+    s = (s < 10) ? "0" + s : s;
+    
+    var time = h + ":" + m + ":" + s + " " + session;
+    document.getElementById("MyClockDisplay").innerText = time;
+    document.getElementById("MyClockDisplay").textContent = time;
+    
+    setTimeout(showTime, 1000);
+    
+}
+
+showTime();
+</script>
+<style>
+.clock {
+    position: relative;
+    top: 5%;
+    left: 5%;
+    transform: translateX(-5%) translateY(-5%);
+    color: #fff;
+    font-size: 60px;
+    font-family: Orbitron;
+    letter-spacing: 7px;
+   
+
+
+}
+</style>
+    
   <style>
    #searchbar {
   background-color: #f2f2f2;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 40px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   color: #222;
   font-size: 14px;
   height: 30px;
   padding: 8px 12px;
-  width: 210px;
+  width: 500px;
 }
 
 #searchbar:focus {
@@ -45,7 +94,7 @@
 button[type="button"] {
   background-color: #f2f2f2;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 40px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   color: #222;
   cursor: pointer;
@@ -61,12 +110,13 @@ button[type="button"]:hover {
   </style>
 <body>
   <input type="text" id="searchbar" placeholder="search anything and everything..." onkeypress="if (event.key === 'Enter') { document.getElementById('searchButton').click(); }">
-  <button type="button" id="moviesButton" onclick="changeSbt('Movies')">Movies</button>
+<button type="button" id="searchButton" onclick=setSbar() >Search</button>
+<button type="button" id="moviesButton" onclick="changeSbt('Movies')">Movies</button>
 <button type="button" id="tvSeriesButton" onclick="changeSbt('TV/Series')">Series</button>
 <button type="button" id="nulButton" onclick="changeSbt('Nul')">Nul</button>
 <button type="button" id="youtubeButton" onclick="changeSbt('Youtube')">Youtube</button>
 <button type="button" id="googleButton" onclick="changeSbt('Google')">Google</button>
-  <button type="button" id="searchButton" onclick=setSbar() >Search</button>
+  
   <script>
     function setSbar() {
       // Get the value of the search bar.
