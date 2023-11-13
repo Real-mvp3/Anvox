@@ -85,7 +85,7 @@ showTime();
   border-radius: 40px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   color: #222;
-  font-size: 28px;
+  font-size: 18px;
   height: 80px;
   padding: 8px 12px;
   width: 50px;
@@ -100,7 +100,7 @@ showTime();
   border-radius: 28px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   color: #222;
-  font-size: 28px;
+  font-size: 12px;
   height: 80px;
   padding: 8px 12px;
   width: 50px;
@@ -128,8 +128,8 @@ button[type="button"]:hover {
   </style>
 <body>
   <input type="text" id="searchbar" placeholder="search anything and everything..." onkeypress="if (event.key === 'Enter') { document.getElementById('searchButton').click(); }">
-  <input type="text" id="season" placeholder=" S" onkeypress="if (event.key === 'Enter') { document.getElementById('searchButton').click(); }">
-  <input type="text" id="episode" placeholder="Ep" onkeypress="if (event.key === 'Enter') { document.getElementById('searchButton').click(); }">
+  <input type="text" id="season" placeholder="Season" onkeypress="if (event.key === 'Enter') { document.getElementById('searchButton').click(); }">
+  <input type="text" id="episode" placeholder="Episode" onkeypress="if (event.key === 'Enter') { document.getElementById('searchButton').click(); }">
 <button type="button" id="moviesButton" onclick="changeSbt('Movies')">Movies</button>
 <button type="button" id="tvSeriesButton" onclick="changeSbt('TV/Series')">Series</button>
 <button type="button" id="youtubeButton" onclick="changeSbt('Youtube')">Youtube</button>
