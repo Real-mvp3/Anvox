@@ -142,23 +142,15 @@ button[type="button"]:hover {
       // Set the Sbar variable to the search term.
       window.Sbar = searchTerm;
       // Do something with the search term, such as sending it to a search engine or displaying it on the page.
-    }
-</script>
-	<script>
-			  function se() {
       // Get the value of the search bar.
       const seas = document.querySelector('#season').value;
       // Set the Sbar variable to the search term.
       window.sea = seas;
       // Do something with the search term, such as sending it to a search engine or displaying it on the page.
-    }
-	</script>
-	<script>
-			  function ep() {
       // Get the value of the search bar.
       const epi = document.querySelector('#episode').value;
       // Set the Sbar variable to the search term.
-      window.EPs = epi;
+      window.eps = epi;
       // Do something with the search term, such as sending it to a search engine or displaying it on the page.
     }
 	</script>
@@ -193,6 +185,8 @@ function changeSbt(value) {
 function setSbar() {
   // Get the value of the search bar.
   const searchTerm = document.querySelector('#searchbar').value;
+  const seas = document.querySelector('#season').value;
+  const epi = document.querySelector('#episode').value
 const owp = searchTerm.replaceAll(' ', '+');
   const url = "https://www.omdbapi.com/?t=";
 const variable = "&apikey=19a4f0fe";
@@ -202,7 +196,6 @@ const variable = "&apikey=19a4f0fe";
   const yturl = "https://www.youtube.com/results?search_query=";
   const gurl = "https://vidsrc.me/embed/movie?imdb=";
 const newurl = (url + owp + variable);
-	var tvid = (movid + seas + epi)
  fetch(newurl)
   .then(function (response) {
     return response.json();
@@ -212,6 +205,7 @@ const newurl = (url + owp + variable);
     var movid = (data.imdbID);
     var movidurl = (murl + movid);
     var movidurl = (murl + movid);
+   var tvid = (`${movid}&season=${seas}&episode=${epi}`);
    var mopo = 10
    if (sbt === 'Movies' ) {
   mopo = 11;
@@ -246,7 +240,8 @@ const newurl = (url + owp + variable);
      var linktype = "https://www.google.com/search?q="
      var cusvar = owp
    }
-   var sbul = linktype + cusvar
+   var sbul = linktype + cusvar;
+   console.log(`${tvid}`);
     console.log(`The current value of sbt is ${sbt} also ${mopo} also ${sbul} also ${newurl}`); window.open(`${sbul}`, "_blank")
   })
 }
