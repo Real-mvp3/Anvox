@@ -64,7 +64,7 @@ showTime();
 </style>
     
   <style>
-   #searchbar {
+   #myInput {
   background-color: #f2f2f2;
   border: 1px solid #ccc;
   border-radius: 40px;
@@ -75,7 +75,7 @@ showTime();
   padding: 8px 12px;
   width: 420px;
 }
-#searchbar:focus {
+#myInput:focus {
   border-color: #66afe9;
   outline: 0;
 }
@@ -127,7 +127,7 @@ button[type="button"]:hover {
 }
   </style>
 <body>
-  <input type="text" id="searchbar" placeholder="search anything and everything..." onkeypress="if (event.key === 'Enter') { document.getElementById('searchButton').click(); }">
+  <input type="text" id="myInput" placeholder="search anything and everything..." onkeypress="if (event.key === 'Enter') { document.getElementById('searchButton').click(); }">
   <input type="text" id="season" placeholder="Season">
   <input type="text" id="episode" placeholder="Episode">
 <button type="button" id="moviesButton" onclick="changeSbt ('Movies'); setSbar()">Movies</button>
@@ -138,7 +138,7 @@ button[type="button"]:hover {
   <script>
     function setSbar() {
       // Get the value of the search bar.
-      const searchTerm = document.querySelector('#searchbar').value;
+      const searchTerm = document.querySelector('myInput').value;
       // Set the Sbar variable to the search term.
       window.Sbar = searchTerm;
       // Do something with the search term, such as sending it to a search engine or displaying it on the page.
@@ -184,7 +184,7 @@ function changeSbt(value) {
 <script>
 function setSbar() {
   // Get the value of the search bar.
-  const searchTerm = document.querySelector('#searchbar').value;
+  const searchTerm = document.querySelector('#myInput').value;
   const seas = document.querySelector('#season').value;
   const epi = document.querySelector('#episode').value
 const owp = searchTerm.replaceAll(' ', '+');
