@@ -117,7 +117,7 @@ button[type="button"] {
   color: #222;
   cursor: pointer;
   font-size: 28px;
-  height: 75px;
+  height: 80px;
   padding: 8px 8px;
   width: 130px;
 }
@@ -132,7 +132,7 @@ button[type="button"]:hover {
   <input type="text" id="episode" placeholder="Episode">
 <button type="button" id="moviesButton" onclick="changeSbt ('Movies'); setSbar()">Movies</button>
 <button type="button" id="tvSeriesButton" onclick="changeSbt ('TV/Series'); setSbar()">Series</button>
-<button type="button" id="youtubeButton" onclick="changeSbt ('Youtube'); setSbar()">Youtube</button>
+<button type="button" id="youtubeButton" onclick="changeSbt ('Youtube'); setSbar()" hidden >Youtube</button>
 <button type="button" id="searchButton" onclick=setSbar() hidden >Search</button>
   
   <script>
