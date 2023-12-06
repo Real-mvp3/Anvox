@@ -126,6 +126,17 @@ button[type="button"]:hover {
   background-color: #e6e6e6;
 }
   </style>
+<style>
+.autocomplete-items {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  /*position the autocomplete items to be the same width as the container:*/
+  top: 100%;
+  left: 0;
+  right: 0;
 <body>
   <input type="text" id="myInput" placeholder="search anything and everything..." onkeypress="if (event.key === 'Enter') { document.getElementById('searchButton').click(); }">
   <input type="text" id="season" placeholder="Season">
